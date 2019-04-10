@@ -28,8 +28,6 @@
 #include "zlib.h"
 #include "unzip.h"
 
-#include "RNZASSZipCommon.h"
-
 #ifdef STDC
 #  include <stddef.h>
 #  include <string.h>

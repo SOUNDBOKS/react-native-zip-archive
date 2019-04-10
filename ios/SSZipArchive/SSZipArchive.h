@@ -6,27 +6,27 @@
 //  Copyright (c) Sam Soffes 2010-2015. All rights reserved.
 //
 
-#ifndef _RNZASSZipARCHIVE_H
-#define _RNZASSZipARCHIVE_H
+#ifndef _SSZipARCHIVE_H
+#define _SSZipARCHIVE_H
 
 #import <Foundation/Foundation.h>
-#include "RNZASSZipCommon.h"
+#include "SSZipCommon.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol RNZASSZipArchiveDelegate;
+@protocol SSZipArchiveDelegate;
 
-@interface RNZASSZipArchive : NSObject
+@interface SSZipArchive : NSObject
 
 // Password check
 + (BOOL)isFilePasswordProtectedAtPath:(NSString *)path;
 
 // Unzip
 + (BOOL)unzipFileAtPath:(NSString *)path toDestination:(NSString *)destination;
-+ (BOOL)unzipFileAtPath:(NSString *)path toDestination:(NSString *)destination delegate:(nullable id<RNZASSZipArchiveDelegate>)delegate;
++ (BOOL)unzipFileAtPath:(NSString *)path toDestination:(NSString *)destination delegate:(nullable id<SSZipArchiveDelegate>)delegate;
 
 + (BOOL)unzipFileAtPath:(NSString *)path toDestination:(NSString *)destination overwrite:(BOOL)overwrite password:(nullable NSString *)password error:(NSError * *)error;
-+ (BOOL)unzipFileAtPath:(NSString *)path toDestination:(NSString *)destination overwrite:(BOOL)overwrite password:(nullable NSString *)password error:(NSError * *)error delegate:(nullable id<RNZASSZipArchiveDelegate>)delegate NS_REFINED_FOR_SWIFT;
++ (BOOL)unzipFileAtPath:(NSString *)path toDestination:(NSString *)destination overwrite:(BOOL)overwrite password:(nullable NSString *)password error:(NSError * *)error delegate:(nullable id<SSZipArchiveDelegate>)delegate NS_REFINED_FOR_SWIFT;
 
 + (BOOL)unzipFileAtPath:(NSString *)path
           toDestination:(NSString *)destination
@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
               overwrite:(BOOL)overwrite
                password:(nullable NSString *)password
                   error:(NSError * *)error
-               delegate:(nullable id<RNZASSZipArchiveDelegate>)delegate;
+               delegate:(nullable id<SSZipArchiveDelegate>)delegate;
 
 + (BOOL)unzipFileAtPath:(NSString *)path
     toDestination:(NSString *)destination
@@ -71,7 +71,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@protocol RNZASSZipArchiveDelegate <NSObject>
+@protocol SSZipArchiveDelegate <NSObject>
 
 @optional
 
@@ -90,4 +90,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 NS_ASSUME_NONNULL_END
 
-#endif /* _RNZASSZipARCHIVE_H */
+#endif /* _SSZipArchive_H */

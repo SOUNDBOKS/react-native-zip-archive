@@ -1,5 +1,5 @@
-#ifndef RNZASSZipCommon
-#define RNZASSZipCommon
+#ifndef SSZipCommon
+#define SSZipCommon
 
 /* tm_unz contain date/time info */
 typedef struct tm_unz_s
