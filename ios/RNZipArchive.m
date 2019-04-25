@@ -36,7 +36,7 @@ RCT_EXPORT_METHOD(unzip:(NSString *)from
 
     [self zipArchiveProgressEvent:0 total:1 filePath:from]; // force 0%
 
-    BOOL success = [SSZipArchive unzipFileAtPath:from toDestination:destinationPath overwrite:YES error:nil delegate:self];
+    BOOL success = [SSZipArchive unzipFileAtPath:from toDestination:destinationPath overwrite:YES password:nil error:nil delegate:self];
 
     [self zipArchiveProgressEvent:1 total:1 filePath:from]; // force 100%
 
